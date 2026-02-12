@@ -1,2 +1,0 @@
-# Ganitwala-Web
-GanitwalaWebProject
