@@ -20,18 +20,49 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className="hidden md:flex gap-8 font-medium text-gray-600 text-sm" style={{ fontSize: "22px" }}>
+                <div className="hidden md:flex gap-8 font-medium text-gray-600" style={{ fontSize: "22px" }}>
+
+                {/* Active Home Button */}
+                {/* <a href="#" className="relative px-5 py-2 rounded-full bg-indigo-100 text-indigo-700 transition-all duration-300 ease-in-out hover:bg-indigo-600 hover:text-white hover:scale-110 hover:shadow-lg hover:shadow-indigo-300/50">Home</a> */}
+
+                {/* Other Links */}
+                {["Home","Courses", "About", "Counseling", "Contact"].map((item, index) => (
+                    <a
+                    key={index}
+                    href={item === "Courses" ? "#courses" : "#"}
+                    className="relative px-2 py-2
+                                transition-all duration-300 ease-in-out
+                                hover:text-indigo-600 
+                                hover:scale-110
+                                hover:drop-shadow-[0_0_6px_rgba(99,102,241,0.6)]
+
+                                after:content-[''] after:absolute 
+                                after:left-0 after:-bottom-1
+                                after:w-0 after:h-[3px]
+                                after:bg-gradient-to-r 
+                                after:from-indigo-500 after:to-purple-500
+                                after:rounded-full
+                                after:transition-all after:duration-300
+                                hover:after:w-full"
+                    >
+                    {item}
+                    </a>
+                ))}
+
+                </div>
+
+                {/* <div className="hidden md:flex gap-8 font-medium text-gray-600 text-sm" style={{ fontSize: "22px" }}>
                     <a href="#" className="hover:text-indigo-600 transition-colors bg-indigo-50 px-3 py-1 rounded-full text-indigo-700">Home</a>
                     <a href="#courses" className="hover:text-indigo-600 transition-colors py-1">Courses</a>
                     <a href="#" className="hover:text-indigo-600 transition-colors py-1">About</a>
                     <a href="#" className="hover:text-indigo-600 transition-colors py-1">Counseling</a>
                     <a href="#" className="hover:text-indigo-600 transition-colors py-1">Contact</a>
-                </div>
+                </div> */}
 
                 <div className="flex items-center gap-4">
                     <button
                         onClick={() => navigate('/login')}
-                        className="font-semibold text-gray-600 hover:text-indigo-600 transition-all text-sm"
+                        className="font-semibold text-white hover:text-indigo-600 transition-all text-sm"
                     >
                         Login
                     </button>
@@ -342,7 +373,7 @@ const Home = () => {
                     <div className="col-span-1 md:col-span-1">
                         <div className="flex items-center gap-2 mb-6">
                             <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center text-white">
-                                <GraduationCap size={24} />
+                                <img src="https://pbs.twimg.com/profile_images/1380130464929697795/rw1VErsX_400x400.jpg" alt="Ganitwala Logo" style={{ border: "2px solid #171717" }} className="w-12 h-12 rounded-xl object-cover"/>
                             </div>
                             <div className="flex flex-col leading-tight">
                                 <span className="font-black text-xl text-white tracking-tight">Ganitwala</span>
